@@ -22,15 +22,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/configure-pages@v1
         id: pages
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: 'npm'
-      - run: npm i
-      - run: npm run build
+          cache: 'pnpm'
+      - run: pnpm i
+      - run: pnpm build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
